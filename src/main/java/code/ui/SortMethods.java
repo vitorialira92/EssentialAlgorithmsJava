@@ -23,7 +23,7 @@ public class SortMethods {
                     int[] array = NumbersReader.readIntegerArraySpaceSeparated("Digite seu array de inteiros a ser ordenado.\n" +
                             "Os números devem estar separados por um espaço.", scanner);
                     long begin = System.currentTimeMillis();
-                    QuickSort.sort(array);
+                    MergeSort.sort(array);
                     long end = System.currentTimeMillis();
 
                     System.out.println("Tempo que a ordenação levou: " + (end - begin) + "ms");
