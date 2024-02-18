@@ -1,4 +1,4 @@
-package org.OrderAlgortihms;
+package code.OrderAlgortihms;
 
 public class HeapSort {
 }

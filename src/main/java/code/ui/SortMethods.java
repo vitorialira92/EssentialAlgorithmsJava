@@ -1,7 +1,9 @@
-package org.ui;
+package code.ui;
 
-import org.OrderAlgortihms.QuickSort;
-import org.Utils.NumbersReader;
+import code.OrderAlgortihms.BubbleSort;
+import code.OrderAlgortihms.InsertionSort;
+import code.OrderAlgortihms.MergeSort;
+import code.Utils.NumbersReader;
 
 import java.util.Scanner;
 
@@ -23,7 +25,7 @@ public class SortMethods {
                     int[] array = NumbersReader.readIntegerArraySpaceSeparated("Digite seu array de inteiros a ser ordenado.\n" +
                             "Os números devem estar separados por um espaço.", scanner);
                     long begin = System.currentTimeMillis();
-                    MergeSort.sort(array);
+                    InsertionSort.sort(array);
                     long end = System.currentTimeMillis();
 
                     System.out.println("Tempo que a ordenação levou: " + (end - begin) + "ms");

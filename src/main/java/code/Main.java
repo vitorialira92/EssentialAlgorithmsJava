@@ -1,7 +1,7 @@
-package org.example;
+package code;//package org;
 
-import org.Utils.NumbersReader;
-import org.ui.SortMethods;
+import code.Utils.NumbersReader;
+import code.ui.SortMethods;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package org.OrderAlgortihms;
+package code.OrderAlgortihms;
 
 public final class QuickSort {
     private QuickSort() {}
