@@ -10,7 +10,7 @@ Ao executar Main.java, é possível testar todos os algortimos e ver o tempo de 
 
 - Algortimos de ordenação
   1. Quick sort
-  2. Merge sort (EM DESENVOLVIMENTO)
+  2. Merge sort
   3. Bubble sort (EM DESENVOLVIMENTO)
   4. Insertion sort (EM DESENVOLVIMENTO)
 - Algortimos de busca
