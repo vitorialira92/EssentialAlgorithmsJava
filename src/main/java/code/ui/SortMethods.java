@@ -38,9 +38,9 @@ public class SortMethods {
     private void execute(ISort sortMethod){
         int[] array = NumbersReader.readIntegerArraySpaceSeparated("Digite seu array de inteiros a ser ordenado.\n" +
                 "Os números devem estar separados por um espaço.", scanner);
-        long begin = System.currentTimeMillis();
+        long begin = System.nanoTime();
         sortMethod.sort(array);
-        long end = System.currentTimeMillis();
+        long end = System.nanoTime();
 
         System.out.println("Tempo que a ordenação com método " + sortMethod.getName() + " levou: " + (end - begin) + "ms");
         System.out.println("Array ordenado:");
