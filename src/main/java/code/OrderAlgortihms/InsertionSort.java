@@ -1,8 +1,12 @@
 package code.OrderAlgortihms;
 
-public class InsertionSort {
-    private InsertionSort() {}
-    public static void sort(int[] v){
+public class InsertionSort implements ISort {
+    public InsertionSort() {}
+    @Override
+    public String getName() {
+        return "Insertion Sort";
+    }
+    public void sort(int[] v){
         for(int i = 1; i < v.length; i++){
 
             int p = v[i];

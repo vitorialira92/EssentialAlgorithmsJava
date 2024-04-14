@@ -1,9 +1,12 @@
 package code.OrderAlgortihms;
 
-public final class QuickSort {
-    private QuickSort() {}
-
-    public static void sort(int[] v){
+public final class QuickSort implements ISort {
+    public QuickSort()  {}
+    @Override
+    public String getName() {
+        return "Quick Sort";
+    }
+    public void sort(int[] v){
         sort(v, 0, v.length - 1);
     }
     private static void sort(int[] v, int b, int e) {

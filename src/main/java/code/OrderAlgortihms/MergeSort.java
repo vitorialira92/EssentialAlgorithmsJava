@@ -1,10 +1,16 @@
 package code.OrderAlgortihms;
 
-public class MergeSort {
-    private MergeSort() {}
-    public static void sort(int[] v){
+public class MergeSort implements ISort {
+    public MergeSort() {}
+    public void sort(int[] v){
         sort(v, 0, v.length);
     }
+
+    @Override
+    public String getName() {
+        return "Merge Sort";
+    }
+
     private static void sort(int[] v, int b, int e){
         if(e > b + 1){
             int m = (b + e) / 2;
@@ -38,7 +44,6 @@ public class MergeSort {
         //transfere para o vetor certo
         for(cont = 0; cont < (e - b); cont ++){
             v[b + cont] = aux [cont];
-            System.out.println("V em " + (b+cont) + " tem valor " + aux[cont]);
         }
 
     }
