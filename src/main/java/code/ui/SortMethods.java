@@ -42,7 +42,7 @@ public class SortMethods {
         sortMethod.sort(array);
         long end = System.nanoTime();
 
-        System.out.println("Tempo que a ordenação com método " + sortMethod.getName() + " levou: " + (end - begin) + "ms");
+        System.out.println("Tempo que a ordenação com método " + sortMethod.getName() + " levou: " + (end - begin) + "ns");
         System.out.println("Array ordenado:");
         for(int n : array){
             System.out.print(n + " ");
