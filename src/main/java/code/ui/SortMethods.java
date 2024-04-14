@@ -3,6 +3,7 @@ package code.ui;
 import code.OrderAlgortihms.*;
 import code.Utils.NumbersReader;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -54,36 +55,69 @@ public class SortMethods {
 
         int[] arrayToBeSorted =  Arrays.copyOf(array, array.length);
 
-        long begin = System.currentTimeMillis();
+        long fastestTime;
+        String fastestMethod;
+        long slowestTime;
+        String slowestMethod;
+
+
+        long begin = System.nanoTime();
         new BubbleSort().sort(arrayToBeSorted);
-        long end = System.currentTimeMillis();
+        long end = System.nanoTime();
 
         long bubbleTime = end - begin;
+        fastestMethod = "Bubble Sort";
+        slowestMethod = "Bubble Sort";
+        slowestTime = bubbleTime;
+        fastestTime = bubbleTime;
 
         arrayToBeSorted =  Arrays.copyOf(array, array.length);
 
-        begin = System.currentTimeMillis();
+        begin = System.nanoTime();
         new InsertionSort().sort(arrayToBeSorted);
-        end = System.currentTimeMillis();
+        end = System.nanoTime();
 
         long insertionTime = end - begin;
 
+        if(insertionTime > slowestTime){
+            slowestMethod = "Insertion Sort";
+            slowestTime = insertionTime;
+        }else if (insertionTime < fastestTime){
+            fastestMethod = "Insertion Sort";
+            fastestTime = insertionTime;
+        }
+
         arrayToBeSorted =  Arrays.copyOf(array, array.length);
 
-        begin = System.currentTimeMillis();
+        begin = System.nanoTime();
         new MergeSort().sort(arrayToBeSorted);
-        end = System.currentTimeMillis();
+        end = System.nanoTime();
 
         long mergeTime = end - begin;
 
+        if(mergeTime > slowestTime){
+            slowestMethod = "Merge Sort";
+            slowestTime = mergeTime;
+        }else if (mergeTime < fastestTime){
+            fastestMethod = "Merge Sort";
+            fastestTime = mergeTime;
+        }
+
         arrayToBeSorted =  Arrays.copyOf(array, array.length);
 
-        begin = System.currentTimeMillis();
+        begin = System.nanoTime();
         new QuickSort().sort(arrayToBeSorted);
-        end = System.currentTimeMillis();
+        end = System.nanoTime();
 
         long quickTime = end - begin;
 
+        if(quickTime > slowestTime){
+            slowestMethod = "Quick Sort";
+            slowestTime = quickTime;
+        }else if (quickTime < fastestTime){
+            fastestMethod = "Quick Sort";
+            fastestTime = quickTime;
+        }
 
         System.out.print("Array ordenado: ");
 
@@ -92,5 +126,14 @@ public class SortMethods {
         }
         System.out.println("\nBUBBLE SORT: " + bubbleTime + "ns |  INSERTION SORT: " + insertionTime + "ns");
         System.out.println("MERGE SORT: " + mergeTime + "ns |  QUICK SORT: " + quickTime + "ns");
+        System.out.println("Execução mais rápida: " + fastestMethod + " em " + fastestTime + "ns " +
+                "|  Execução mais lenta: " + slowestMethod + " em " + slowestTime + "ns");
+
+        System.out.println("\nPressione qualquer tecla ...");
+        try {
+            System.in.read(); // Aguarda o pressionamento de uma tecla
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
